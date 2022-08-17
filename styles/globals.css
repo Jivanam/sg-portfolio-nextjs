@@ -1,26 +1,58 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+html {
+  --main-font: "Raleway", sans-serif;
+  --main-fontColor: #1f1f1f;
+
+  --logoSvg: invert(61%) sepia(40%) saturate(5763%) hue-rotate(22deg)
+    brightness(106%) contrast(101%);
+
+  --logoColorSvg: brightness(0) saturate(100%) invert(63%) sepia(22%) saturate(993%) hue-rotate(3deg) brightness(89%) contrast(86%);
+  /*DEFAULT COLOUR */
+  --logoColor: #b69245;
+
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  font-family: var(--main-font);
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  color: var(--main-fontColor);
+  font-weight: 400;
+}
+
+#__next {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  text-decoration: none;
+  position: relative;
+  color: var(--main-linkTxtColor);
+}
+
+a:hover {
+  color: var(--main-linkHoverColor);
+}
+
+li {
+  list-style: none;
+}
+
+
+
+.defaultSection{
+  margin: 35px 0 25px 0;
+  padding: 15px 0;
+
 }

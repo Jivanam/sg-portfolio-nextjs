@@ -1,0 +1,26 @@
+.aboutMe {
+  --default-container-size: 85%;
+  /* background-color: #f7fbffc2; */
+}
+.container {
+  position: relative;
+  width: var(--default-container-size);
+  max-width: 1400px;
+  margin: auto;
+}
+
+.description {
+  margin: auto;
+  font-size: 16px;
+  line-height: 1.6;
+  letter-spacing: 0.8px;
+  /* font-weight: 300; */
+}
+
+.description p {
+  margin: 20px 0;
+}
+
+.buttons {
+  text-align: center;
+}

@@ -1,0 +1,11 @@
+.exploreWrapper {
+  --default-container-size: 85%;
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
+  width: var(--default-container-size);
+  max-width: 1400px;
+  margin: auto;
+  margin-top: -35px;
+  
+}

@@ -1,0 +1,65 @@
+.heroSection {
+  overflow: hidden;
+  position: relative;
+  --default-container-size: 85%;
+  height: 93vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.heroSection .logoBgWrapper {
+  opacity: 0.03;
+  position: absolute;
+  right: 1%;
+  top: -10%;
+  width: 55%;
+  object-fit: contain;
+  height: auto;
+}
+
+.container {
+  position: relative;
+  width: var(--default-container-size);
+  max-width: 1400px;
+  margin: auto;
+}
+
+.heroContent {
+  margin-top: -80px;
+}
+
+.introTxt {
+  font-weight: 200;
+  font-size: 35px;
+}
+
+.introTxt span {
+  font-size: 20px;
+}
+
+.highlight {
+  letter-spacing: -1px;
+  font-size: 65px;
+  font-weight: 100;
+  color: var(--logoColor);
+}
+
+.introDescription p {
+  font-weight: 300;
+  letter-spacing: 0.7px;
+  font-size: 16px;
+  margin: 10px 0 0 0;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+.bounceIcon {
+  margin: 0 auto 15px auto;
+}
+
+.bounceIcon .iconWrapper {
+  height: 15px;
+  width: 15px;
+  filter: var(--logoColorSvg);
+}

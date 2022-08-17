@@ -1,0 +1,81 @@
+.navBar {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  --default-container-size: 85%;
+  --shadowColor: #0000002c;
+  padding: 15px 0 5px 0;
+  box-shadow: 0px 2px 18px -10px var(--shadowColor);
+  transition: 0.3s;
+  background-color: #ffffff;
+  top: -0px;
+}
+
+.navBarHidden {
+  position: fixed;
+  width: 100%;
+  top: -80px;
+  z-index: 2;
+  padding: 15px 0 5px 0;
+  box-shadow: 0px 2px 18px -10px var(--shadowColor);
+  transition: 0.3s linear;
+  
+}
+
+.container {
+  width: var(--default-container-size);
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+}
+
+.logoHolder {
+  flex: 1 1 30%;
+  display: flex;
+  align-items: center;
+}
+
+.logoWrapper {
+  max-width: 35px;
+}
+
+.logoWrapper svg {
+  width: 30px;
+  filter: var(--logoSvg);
+}
+
+.logoHolder h1 {
+  text-transform: uppercase;
+  font-size: 23px;
+  font-weight: 300;
+  /* text-transform: uppercase; */
+  letter-spacing: 1px;
+  color: var(--logoColor);
+  margin-left: 5px;
+}
+
+.navLinks {
+  font-size: 15px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  flex: 1 1 70%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navLinks li {
+  margin: 0 10px;
+  padding: 5px 7px;
+}
+
+.navLinks a li:hover {
+  color: var(--logoColor);
+  transition: 0.35s;
+}
+
+.activeLink {
+  border: 1px solid var(--logoColor);
+  border-radius: 5px;
+  color: var(--logoColor);
+}

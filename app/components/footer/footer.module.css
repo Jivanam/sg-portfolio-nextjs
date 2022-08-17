@@ -1,0 +1,63 @@
+.footerFixer {
+  flex: 1;
+}
+
+.footer {
+  --default-container-size: 85%;
+  --borderColor: #e2e2e2;
+  --techColor: #004ad3;
+  --projectLinkSVGColor: invert(16%) sepia(83%) saturate(3539%)
+    hue-rotate(214deg) brightness(102%) contrast(109%);
+  --tblRowHighlighter: #f3f3f3;
+  border-top: 1px solid var(--borderColor);
+}
+
+.container {
+  position: relative;
+  width: var(--default-container-size);
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.contactEmail {
+  flex: 1 1 70%;
+  font-size: 12.5px;
+  letter-spacing: 2.5px;
+  font-weight: 400;
+}
+
+.contactEmail a:hover {
+  color: var(--logoColor);
+  transition: 0.5s;
+}
+
+.footerMenus {
+  display: flex;
+  margin-left: auto;
+  justify-content: flex-start;
+}
+
+.footerMenus li{
+    margin: 0 5px;
+}
+
+.footerMenus svg {
+  height: 25px;
+  width: 25px;
+  margin: 0 7px;
+}
+
+.footerMenus svg:hover {
+  transition: 0.3s;
+  filter: var(--logoColorSvg);
+  transform: translate(0, -5px);
+}
+
+.linkedin svg {
+  height: 25px;
+  width: 20px;
+  margin: 0 7px;
+}
