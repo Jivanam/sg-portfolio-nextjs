@@ -30,9 +30,9 @@ export default function Projects(props) {
           </div>
           {projectData &&
             projectData.length > 0 &&
-            projectData.map((project) => {
+            projectData.map((project, index) => {
               return (
-                <div className={Styles.tableRow}>
+                <div key={index} className={Styles.tableRow}>
                   <div className={Styles.title}>{project.title}</div>
                   <div className={Styles.techStack}>
                     {project.techStack &&

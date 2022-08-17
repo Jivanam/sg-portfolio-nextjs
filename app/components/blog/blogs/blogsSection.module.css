@@ -1,0 +1,12 @@
+.blogsCards {
+  --default-container-size: 85%;
+  position: relative;
+  width: var(--default-container-size);
+  max-width: 1400px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+}

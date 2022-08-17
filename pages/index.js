@@ -14,7 +14,7 @@ export default function Home() {
       <AboutMe />
       <FeatureBanner sectionTitle="Latest blog" sectionId="latest-blog"/>
       <div className={StyleHome.exploreWrapper}>
-        <ButtonBorderLess btnCaption="Explore more blogs" href="#" />
+        <ButtonBorderLess btnCaption="Explore more blogs" href="/blogs" />
       </div>
       <Projects sectionTitle="Projects" />
       <Contact />

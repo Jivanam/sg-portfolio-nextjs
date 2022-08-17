@@ -1,0 +1,52 @@
+.card {
+  --borderColor: #e2e2e2;
+  flex: 0 30%;
+  display: inline-block;
+  border-radius: 8px;
+  border: 0.5px solid var(--borderColor);
+  margin: 10px 15px;
+}
+
+.cardImg {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  position: relative;
+  width: 100%;
+  min-height: 225px;
+  overflow: hidden;
+}
+
+.cardTxt {
+  margin: 20px 20px;
+}
+
+.cardTxt > * {
+  margin: 10px 0;
+}
+
+.tags {
+  margin-top: 10px;
+  display: flex;
+  font-size: 12.5px;
+}
+
+.tags li {
+  margin: 0 5px;
+  padding: 2px 3px;
+}
+
+.cardTitle {
+  font-size: 30px;
+  letter-spacing: -0.3px;
+  line-height: 1.05;
+  font-weight: 600;
+}
+
+.cardDate {
+  font-size: 13.5px;
+}
+
+.cardDate span {
+  font-weight: 500;
+  font-style: italic;
+}
