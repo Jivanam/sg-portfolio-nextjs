@@ -75,7 +75,8 @@
 }
 
 .activeLink {
-  border: 1px solid var(--logoColor);
+  border-bottom: 1px solid var(--logoColor);
   border-radius: 5px;
   color: var(--logoColor);
 }
+

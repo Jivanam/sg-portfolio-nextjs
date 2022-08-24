@@ -3,83 +3,69 @@ import Styles from "./blogsSection.module.css";
 import Link from "next/link";
 import { Fragment } from "react";
 import SectionHeading from "../../sectionHeading/sectionHeading";
-import defaultCoverImg from "../../../../public/img/defaultBannerImg.jpg";
+import { useState } from "react";
+import InfiniteScroll from "react-infinite-scroll-component";
+import { apiSGDirectusCustom } from "../../../utils/apiCaller";
+import { getSGPortfolioBlogsBasic } from "../../../constants/constant";
+
 export default function BlogsSection(props) {
-  const blogsData = [
-    {
-      coverImg: defaultCoverImg,
-      tags: ["tag1", "tag2", "tag3"],
-      title: "This is an example of blog title 1",
-      publishedDate: "17/08/2022",
-    },
-    {
-      coverImg: defaultCoverImg,
-      tags: ["tag1", "tag2", "tag3"],
-      title: "This is an example of blog title 2",
-      publishedDate: "17/08/2022",
-    },
-    {
-      coverImg: defaultCoverImg,
-      tags: ["tag1", "tag2", "tag3"],
-      title: "This is an example of blog title 3",
-      publishedDate: "17/08/2022",
-    },
-    {
-      coverImg: defaultCoverImg,
-      tags: ["tag1", "tag2", "tag3"],
-      title: "This is an example of blog title 4",
-      publishedDate: "17/08/2022",
-    },
-    {
-      coverImg: defaultCoverImg,
-      tags: ["tag1", "tag2", "tag3"],
-      title: "This is an example of blog title 5",
-      publishedDate: "17/08/2022",
-    },
-    {
-      coverImg: defaultCoverImg,
-      tags: ["tag1", "tag2", "tag3"],
-      title: "This is an example of blog title 6",
-      publishedDate: "17/08/2022",
-    },
-    {
-      coverImg: defaultCoverImg,
-      tags: ["tag1", "tag2", "tag3"],
-      title: "This is an example of blog title 7",
-      publishedDate: "17/08/2022",
-    },
-    {
-      coverImg: defaultCoverImg,
-      tags: ["tag1", "tag2", "tag3"],
-      title: "This is an example of blog title 8",
-      publishedDate: "17/08/2022",
-    },
-    {
-      coverImg: defaultCoverImg,
-      tags: ["tag1", "tag2", "tag3"],
-      title: "This is an example of blog title 9",
-      publishedDate: "17/08/2022",
-    },
-  ];
+  const { blogsCardData } = props;
+
+  const [blogsForCards, setBlogsForCards] = useState(blogsCardData.data);
+  const [cardNumberPerFetch, setCardNumberPerFetch] = useState(3);
+  const [pageNumber, setPageNumber] = useState(1);
+  const [hasMore, setHasMore] = useState(true);
+
+  const fetchBlogsCardData = async () => {
+    console.log("Fetch called");
+    const response = await apiSGDirectusCustom(
+      getSGPortfolioBlogsBasic(
+        cardNumberPerFetch,
+        pageNumber * cardNumberPerFetch + 1
+      )
+    );
+
+    if (response.data.length < 3) {
+      setHasMore(false);
+    }
+
+    if (response.data) {
+      console.log(response.data);
+      setBlogsForCards((oldArr) => [...oldArr, ...response.data]);
+      setPageNumber(pageNumber + 1);
+    }
+  };
 
   return (
     <Fragment>
       <SectionHeading sectionTitle="More blogs" />
-      <section className={Styles.blogsCards}>
-        {blogsData &&
-          blogsData.length > 0 &&
-          blogsData.map((blog, index) => {
-            return (
-              <BlogCard
-                key={index}
-                cardCoverImg={blog.coverImg}
-                cardTags={blog.tags}
-                cardTitle={blog.title}
-                cardPublishedDate={blog.publishedDate}
-              />
-            );
-          })}
-      </section>
+
+      <InfiniteScroll
+        dataLength={blogsForCards.length}
+        next={fetchBlogsCardData}
+        hasMore={hasMore}
+        loader={
+          <span className={Styles.scrollDownMsg}>
+            scroll down to see more ...
+          </span>
+        }
+      >
+        <section className={Styles.blogsCards}>
+          {blogsForCards &&
+            blogsForCards.length > 0 &&
+            blogsForCards.map((blog, index) => {
+              return (
+                <BlogCard
+                  key={index}
+                  cardCoverImg={blog.cover_image}
+                  cardTags={blog.blog_tags}
+                  cardTitle={blog.title}
+                  cardPublishedDate={blog.date_updated}
+                />
+              );
+            })}
+        </section>
+      </InfiniteScroll>
     </Fragment>
   );
 }

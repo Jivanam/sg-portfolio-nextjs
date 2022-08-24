@@ -10,3 +10,14 @@
   flex-wrap: wrap;
   padding: 10px 20px;
 }
+
+
+.scrollDownMsg{
+  display: block;
+  margin: 5px 0 10px 0;
+  font-size: 13px;
+  text-align: center;
+  color: #3333eb;
+  letter-spacing: 0.7px;
+
+}

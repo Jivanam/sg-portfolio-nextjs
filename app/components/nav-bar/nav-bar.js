@@ -49,7 +49,7 @@ export default function NavBar() {
           </Link>
         </div>
         <ul className={Styles.navLinks}>
-          <ActiveNavLink href="/#latest-blog">Blogs</ActiveNavLink>
+          <ActiveNavLink href="/blogs">Blogs</ActiveNavLink>
           <ActiveNavLink href="/#projects-list">Projects</ActiveNavLink>
           <ActiveNavLink href="/#contact-section">Contact</ActiveNavLink>
         </ul>

@@ -2,22 +2,10 @@ import Icon from "../icons/icon";
 import SectionHeading from "../sectionHeading/sectionHeading";
 import Styles from "./projects.module.css";
 import Link from "next/link";
+import { sgProjectData } from "../../content/content";
 export default function Projects(props) {
   const { sectionTitle } = props;
-  const projectData = [
-    {
-      title: "Project 1",
-      techStack: ["Next.js", "MySql", "Axios"],
-      externalLink: "externalLink",
-      gitHubLink: "githubLink",
-    },
-    {
-      title: "Project 2",
-      techStack: ["Next.js", "MySql", "Axios"],
-      externalLink: "",
-      gitHubLink: "githubLink",
-    },
-  ];
+
   return (
     <section id="projects-list" className={`${Styles.projects} defaultSection`}>
       <div className={Styles.container}>
@@ -28,9 +16,9 @@ export default function Projects(props) {
             <div className={Styles.techStack}>Tech used</div>
             <div className={Styles.projectLink}>Link</div>
           </div>
-          {projectData &&
-            projectData.length > 0 &&
-            projectData.map((project, index) => {
+          {sgProjectData &&
+            sgProjectData.length > 0 &&
+            sgProjectData.map((project, index) => {
               return (
                 <div key={index} className={Styles.tableRow}>
                   <div className={Styles.title}>{project.title}</div>

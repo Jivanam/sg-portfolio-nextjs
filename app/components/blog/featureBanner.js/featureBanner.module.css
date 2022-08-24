@@ -24,12 +24,14 @@
 .banner:hover {
   transition: 0.8s;
   border: 0.5px solid var(--logoColor);
+  cursor: pointer;
+
 }
 
 .bannerTxt {
   margin: 30px 20px 30px 30px;
   /* background-color: #685d7b; */
-  flex: 0 0 57%;
+  flex: 1 1 60%;
 }
 
 .bannerTxt > * {
@@ -68,7 +70,7 @@
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   position: relative;
-  flex: 1 1 43%;
+  flex: 1 1 40%;
   width: 100%;
   height: 100%;
   overflow: hidden;
