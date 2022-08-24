@@ -2,6 +2,9 @@ import Styles from "./hero-section.module.css";
 import Bounce from "../bounce/bounce";
 import Link from "next/link";
 import Icon from "../icons/icon";
+import DOMPurify from "isomorphic-dompurify";
+import { sgHeroDescription } from "../../content/content";
+
 export default function HeroSection() {
   return (
     <section className={Styles.heroSection}>
@@ -15,13 +18,13 @@ export default function HeroSection() {
             Hi <span>नमस्ते</span>, I am
           </div>
           <div className={Styles.highlight}>Shason Gurung.</div>
-          <div className={Styles.introDescription}>
-            <p>
-              I'm a tech enthusiast currently based in UK. I enjoy learning and
-              tinkering with various aspects of web apps. Here, you will find
-              some of the projects I have worked or currently been working on.
-            </p>
-          </div>
+
+          <div
+            dangerouslySetInnerHTML={{
+              __html: DOMPurify.sanitize(sgHeroDescription),
+            }}
+            className={Styles.introDescription}
+          />
         </div>
       </div>
       <div className={Styles.bounceIcon}>
