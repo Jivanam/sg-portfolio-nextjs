@@ -7,15 +7,15 @@ import SectionHeading from "../sectionHeading/sectionHeading";
 export default function DefaultError() {
   const router = useRouter();
 
-    useEffect(() => {
-      setTimeout(() => {
-        router.replace("/");
-      }, 3000);
-    }, []);
+  useEffect(() => {
+    setTimeout(() => {
+      router.replace("/");
+    }, 3000);
+  }, []);
 
   const logoTitle = "Shason";
   return (
-    <section className={Styles.errorSectionContainer}>
+    <section className={`${Styles.errorSectionContainer} defaultSection`}>
       <div className={Styles.logoHolder}>
         <div className={Styles.logoWrapper}>
           <Icon iconName="Logo" />

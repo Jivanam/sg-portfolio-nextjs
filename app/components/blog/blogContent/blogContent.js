@@ -17,7 +17,7 @@ export default function BlogContentSection(props) {
   const blogDescriptionSantised = DOMPurify.sanitize(blog?.description);
 
   return (
-    <section className={Styles.blogContent}>
+    <section className={`${Styles.blogContent} defaultSection`}>
       <div className={Styles.container}>
         <div className={Styles.content}>
           <h1 className={Styles.contentTitle}>{blog?.title}</h1>

@@ -2,6 +2,10 @@
   --default-container-size: 85%;
   --borderColor: #e2e2e2;
   --formField-min-width: 350px;
+  --error-color: #9e0000d7;
+  --error-border-color: #fd7a7a;
+  --success-color: #115300d7;
+  --success-border-color: #b2df97;
 }
 
 .container {
@@ -76,6 +80,28 @@
   text-decoration: none;
 }
 
-.contactDetails .btn{
-    background-color: #ffffff;
+.contactDetails .btn {
+  background-color: #ffffff;
+}
+
+.contactDetails .errorSection {
+  margin-top: -15px;
+}
+
+.contact .message {
+  border-radius: 7px;
+  padding: 5px 10px;
+  font-size: 11.5px;
+  font-weight: 400;
+}
+
+.errorMessage {
+  border-bottom: 0.5px solid var(--error-border-color);
+  color: var(--error-color);
+}
+
+.successMessage {
+  border-bottom: 0.5px solid var(--success-border-color);
+  color: var(--success-color);
+  border-radius: 7px;
 }
