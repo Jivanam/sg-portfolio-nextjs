@@ -9,3 +9,8 @@
   margin-top: -35px;
   
 }
+
+.exploreWrapper a:hover {
+  font-weight: 500;
+  
+}

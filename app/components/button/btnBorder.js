@@ -5,7 +5,10 @@ export default function ButtonBorder(props) {
 
   return (
     <Link href={href}>
-      <a className={Styles.btnBorder}>{btnCaption}</a>
+      <a className={Styles.btnFillWrapper}>
+        <span className={Styles.btnBorder}>{btnCaption}</span>
+        {props.children && props.children}
+      </a>
     </Link>
   );
 }

@@ -6,8 +6,10 @@ import ButtonBorderLess from "../app/components/button/btnBorderLess";
 import Contact from "../app/components/contact/contact";
 import HeroSection from "../app/components/hero-section/hero-section";
 import Projects from "../app/components/projects/projects";
+import { sgProjectData } from "../app/content/content";
 import { apiSGDirectusCustom } from "../app/utils/apiCaller";
 import { getSGPortfolioBlogsFeature } from "../app/constants/constant";
+import Icon from "../app/components/icons/icon";
 
 export default function Home(props) {
   const { blogsFeatureData } = props;
@@ -23,9 +25,14 @@ export default function Home(props) {
         href={`blogs/${blogsFeatureData?.data.blog_title_slug}`}
       />
       <div className={StyleHome.exploreWrapper}>
-        <ButtonBorderLess btnCaption="Explore more blogs" href="/blogs" />
+        <ButtonBorderLess href="/blogs" btnCaption="Explore more">
+          <Icon iconName="ArrowRight" />
+        </ButtonBorderLess>
       </div>
-      <Projects sectionTitle="Projects" />
+      {sgProjectData && sgProjectData.length > 0 && (
+        <Projects sectionTitle="Projects" sgProjectData={sgProjectData} />
+      )}
+
       <Contact />
     </Fragment>
   );

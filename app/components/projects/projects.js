@@ -2,9 +2,9 @@ import Icon from "../icons/icon";
 import SectionHeading from "../sectionHeading/sectionHeading";
 import Styles from "./projects.module.css";
 import Link from "next/link";
-import { sgProjectData } from "../../content/content";
+
 export default function Projects(props) {
-  const { sectionTitle } = props;
+  const { sectionTitle, sgProjectData } = props;
 
   return (
     <section id="projects-list" className={`${Styles.projects} defaultSection`}>

@@ -1,5 +1,4 @@
 import Styles from "./button.module.css";
-import Icon from "../icons/icon";
 import Link from "next/link";
 export default function ButtonBorderLess(props) {
   const { btnCaption, href } = props;
@@ -7,7 +6,8 @@ export default function ButtonBorderLess(props) {
   return (
     <Link href={href}>
       <a className={Styles.btnBorderLess}>
-        {btnCaption} <Icon iconName="ArrowRight" />
+        {btnCaption}
+        {props.children}
       </a>
     </Link>
   );
