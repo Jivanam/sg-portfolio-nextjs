@@ -5,7 +5,7 @@ name: SG-Portfolio-NextJS-CD
 
 on:
   push:
-    branches: ["master"]
+    branches: ["main"]
 
 jobs:
   build:
