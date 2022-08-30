@@ -36,5 +36,14 @@ jobs:
       - name: Create a fresh App directory
         run: mkdir -p ${{secrets.APP_ROOT_DIRECTORY}}
 
+      - name: Moving App from runner directory to designated directory
+        run: mv -f ${{secrets.APP_LOCATION_IN_RUNNER_DIRECTORY}}* ${{secrets.APP_ROOT_DIRECTORY}}
+
+      - name: Moving App all files from runner directory to designated directory
+        run: mv -f ${{secrets.APP_LOCATION_IN_RUNNER_DIRECTORY}}.[!.]*  ${{secrets.APP_ROOT_DIRECTORY}}
+
+      - name: Re-start PM2 process
+        run: pm2 restart SG-portfolio-nextjs
+
       
 
