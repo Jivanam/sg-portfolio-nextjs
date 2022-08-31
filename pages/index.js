@@ -18,12 +18,16 @@ export default function Home(props) {
     <Fragment>
       <HeroSection />
       <AboutMe />
-      <FeatureBanner
-        featureBlog={blogsFeatureData?.data}
-        sectionTitle="Latest blog"
-        sectionId="latest-blog"
-        href={`blogs/${blogsFeatureData?.data.blog_title_slug}`}
-      />
+
+      {blogsFeatureData?.data && (
+        <FeatureBanner
+          featureBlog={blogsFeatureData?.data}
+          sectionTitle="Latest blog"
+          sectionId="latest-blog"
+          href={`blogs/${blogsFeatureData?.data.blog_title_slug}`}
+        />
+      )}
+
       <div className={StyleHome.exploreWrapper}>
         <ButtonBorderLess href="/blogs" btnCaption="Explore more">
           <Icon iconName="ArrowRight" />
@@ -39,15 +43,12 @@ export default function Home(props) {
 }
 
 export async function getServerSideProps() {
-  const blogsFeatureData = await apiSGDirectusCustom(
+  const blogsFeatureDataFetch = await apiSGDirectusCustom(
     getSGPortfolioBlogsFeature
   );
-
-  if (blogsFeatureData.error) {
-    return {
-      notFound: true,
-    };
-  }
+  const blogsFeatureData = blogsFeatureDataFetch?.data
+    ? blogsFeatureDataFetch
+    : null;
 
   return {
     props: { blogsFeatureData },
