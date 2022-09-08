@@ -12,6 +12,10 @@ export async function getServerSideProps(context) {
     getSGPortfolioBlog(context.params.blogSlug)
   );
 
+  // const test = JSON.parse(blogContent.data.description);
+
+  // console.log(test.blocks);
+
   if (blogContent.error) {
     return {
       notFound: true,

@@ -3,6 +3,8 @@ import defaultCardImg from "../../../../public/img/defaultBannerImg.jpg";
 import Image from "next/image";
 import Moment from "react-moment";
 import DOMPurify from "isomorphic-dompurify";
+import dynamic from "next/dynamic";
+
 export default function BlogContentSection(props) {
   const { content } = props;
 
@@ -10,11 +12,14 @@ export default function BlogContentSection(props) {
     content.data && {
       title: content?.data?.title,
       tags: content?.data?.blog_tags,
-      description: content?.data?.description,
+      description: JSON.parse(content?.data?.description),
       publishedDate: content?.data?.date_updated,
       coverImage: content?.data?.cover_image,
     };
-  const blogDescriptionSantised = DOMPurify.sanitize(blog?.description);
+  // const blogDescriptionSantised = DOMPurify.sanitize(blog?.description);
+  const editorHolderId = "blogContent";
+  
+  const EditorJSComponent = dynamic(() => import("../../editor/editor"), {ssr: false});
 
   return (
     <section className={`${Styles.blogContent} defaultSection`}>
@@ -45,9 +50,9 @@ export default function BlogContentSection(props) {
             />
           </div>
 
-          <div
-            dangerouslySetInnerHTML={{ __html: blogDescriptionSantised }}
-            className={Styles.contentDetails}
+          <EditorJSComponent
+            editorHolderId={editorHolderId}
+            data={blog.description}
           />
         </div>
       </div>

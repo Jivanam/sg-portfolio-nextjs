@@ -9,6 +9,8 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@calumk/editorjs-codeflask": "github:shasongurung/editorjs-codeflask#main",
+    "@editorjs/editorjs": "^2.25.0",
     "axios": "^0.27.2",
     "isomorphic-dompurify": "^0.21.0",
     "moment": "^2.29.4",
