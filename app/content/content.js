@@ -1,15 +1,15 @@
 export const sgProjectData = [
   {
-    title: "Project 1",
-    techStack: ["Next.js", "MySql", "Axios"],
-    externalLink: "externalLink",
-    gitHubLink: "githubLink",
+    title: "Gold price",
+    techStack: ["Next.js", "MySql", "Python", "Selenium", "Crontab"],
+    externalLink: "https://default-home.sgprojects.xyz/goldprice",
+    gitHubLink: "https://github.com/shasongurung/default-home",
   },
   {
-    title: "Project 2",
-    techStack: ["Next.js", "MySql", "Axios"],
-    externalLink: "",
-    gitHubLink: "githubLink",
+    title: "Portfolio",
+    techStack: ["Next.js", "MySql"],
+    externalLink: "https://sgprojects.xyz/",
+    gitHubLink: "https://github.com/shasongurung/sg-portfolio-nextjs",
   },
 ];
 

@@ -22,8 +22,8 @@ export default function Editor(props) {
 
   useEffect(() => {
     // console.log(isInstance.current);
-    if (!isInstance.current) {
-      console.log("intiliase");
+    if (!isInstance.current && data) {
+      // console.log("intiliase");
       initEditor();
     } else {
       isInstance.current.destroy();

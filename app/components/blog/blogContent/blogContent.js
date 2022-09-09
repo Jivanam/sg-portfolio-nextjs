@@ -52,7 +52,7 @@ export default function BlogContentSection(props) {
 
           <EditorJSComponent
             editorHolderId={editorHolderId}
-            data={blog.description}
+            data={blog?.description}
           />
         </div>
       </div>
