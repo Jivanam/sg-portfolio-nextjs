@@ -1,6 +1,7 @@
 export const sgProjectData = [
   {
     title: "Gold price",
+    description: "",
     techStack: ["Next.js", "MySql", "Python", "Selenium", "Crontab"],
     externalLink: "https://default-home.sgprojects.xyz/goldprice",
     gitHubLink: "https://github.com/shasongurung/default-home",
